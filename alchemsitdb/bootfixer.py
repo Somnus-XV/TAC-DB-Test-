@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e36fa33bff556073fff3cb24f69f79d90067449a9f2aa2c8a5677b330c9057b
-size 912
+import os
+
+# Percorso della cartella con i tuoi HTML
+cartella = r"path"
+
+# Script da inserire
+script = '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>\n'
+
+# Ciclo su tutti i file nella cartella (e sottocartelle)
+for root, dirs, files in os.walk(cartella):
+    for file in files:
+        if file.endswith(".html"):
+            path_file = os.path.join(root, file)
+            with open(path_file, "r", encoding="utf-8") as f:
+                contenuto = f.read()
+            
+            # Inserisce lo script prima di </body>
+            if script.strip() not in contenuto:
+                contenuto_modificato = contenuto.replace("</body>", script + "</body>")
+                with open(path_file, "w", encoding="utf-8") as f:
+                    f.write(contenuto_modificato)
+                print(f"Aggiunto script in: {path_file}")

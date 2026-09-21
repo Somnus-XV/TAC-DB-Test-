@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:463cf7add1dbbd0ac833e60516996631977641521c3b2673a91a141aba8e2399
-size 306
+import { Controller } from "@hotwired/stimulus"
+import "tippy"
+
+export default class extends Controller {
+  connect() {
+    this.tippyElements.forEach(element => tippy(element, {
+      theme: "info"
+    }));
+  }
+
+  get tippyElements() {
+    return document.querySelectorAll("[data-tippy-content]");
+  }
+};
