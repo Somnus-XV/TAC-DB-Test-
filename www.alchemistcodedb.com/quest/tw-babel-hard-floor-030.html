@@ -109,16 +109,15 @@
             </div>
           </li>
         </ul>
-        <form id="search" class="my-2 my-lg-0 flex-grow-1" data-controller="search" action="https://somnus-xv.github.io/TAC-DB-Test-/search" accept-charset="UTF-8" method="get">
-          <div class="input-group input-group-sm">
-              <input type="text" name="s" id="s" class="form-control" placeholder="Search the database…" autocomplete="off" aria-label="Search the database…" data-search-target="input" data-action="keydown.enter-&gt;search#updateInput input-&gt;search#result focus-&gt;search#start focusout-&gt;search#stop" />
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-sm btn-primary" data-action="click-&gt;search#disabled">
-                <i class="fa-solid fa-magnifying-glass"></i>
-</button>            </span>
-            <div class="d-flex align-items-center search-loading d-none" data-search-target="loading"><div class="spinner-border me-2" aria-hidden="true"></div>Loading...</div>
-            <turbo-frame id="search_results" target="_top"><ul role="listbox" id="search_list" data-search-target="list" hidden></ul></turbo-frame>
-          </div>
+        <form id="search" class="my-2 my-lg-0 flex-grow-1" action="https://www.google.com/search" method="get" target="_blank">
+  <input type="hidden" name="as_sitesearch" value="somnus-xv.github.io/TAC-DB-Test-">
+  <div class="input-group input-group-sm">
+      <input type="text" name="q" id="s" class="form-control" placeholder="Search database via Googleâ€¦" autocomplete="off" aria-label="Search the databaseâ€¦">
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-sm btn-primary">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>            </span>
+  </div>
 </form>        <div class="btn-group pull-right ms-2" role="group" aria-label="Locale switcher">
                       <a class="btn btn-sm btn-primary" role="button" href="javascript:;">GL</a>
       <a class="btn btn-sm btn-light" role="button" href="../jp/quest/tw-babel-hard-floor-030.html">JP</a>
